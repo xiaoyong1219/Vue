@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue示例</title>
+    <!-- 1、引入Vue的包-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+  <!-- 将来vue实例控制的元素：MVVM中的V（view）-->
+  <div id="app">
+    <p>{{ msg }}</p>
+  </div>
+  <script>
+    //2、创建一个vue的实例：MVVM中的VM（viewmodel），VM调度者
+    var vm = new Vue({
+        el:'#app',//表示这个Vue实例控制页面上的哪个元素
+        //MVVM中的M（model），专门用来存放每个页面的数据
+        data:{
+          msg:'挺好的'
+        }
+    });
+  </script>
+</body>
+</html>

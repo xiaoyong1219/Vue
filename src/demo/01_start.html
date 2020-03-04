@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>开始VUE</title>
+</head>
+<body>
+  <div id="app"></div>
+</body>
+<!--1、引包-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!--vue.js是支持所有模块，vue.min.js是压缩后的，初学引入vue.js有提示-->
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<!-- 生产环境版本，优化了尺寸和速度 -->
+<!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+<!--通过Vue对象去new Vue(options)-->
+<script type="text/javascript">
+  /*
+    使用步骤
+    1:引包，具备Vue对象
+    2、启动Vue， 通过new Vue(options);
+    3、配置options选项对象
+    4、el：目的地，template：模板，data:function(){
+     return{要使用的key:数据}
+     }
+    5、页面中存在该目的地，目的地字符串描述同jQuery方式一样
+  */
+
+  new Vue({
+      //el:发生行为的目的地
+      // el:'#app',//在vue内部运行机制，需要根据你传递的字符串进行判断，比如究竟是#xxx还是.xxx，还是div元素查找，
+      el:document.getElementById("#app"),//更为优化，将元素直接找到，避免了Vue来取判断
+      //template：装载的模板
+      template:'<div><h1>{{text}}</h1></div>',
+      //动态数据的声明
+      data:function () {//也可以说使用对象，不用太在意
+          return{
+              //template中要使用的数据
+              text:'Hello World'
+          }
+      }
+  });
+</script>
+</html>
